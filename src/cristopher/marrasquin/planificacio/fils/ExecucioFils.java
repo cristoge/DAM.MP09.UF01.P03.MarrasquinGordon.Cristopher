@@ -18,26 +18,26 @@ public class ExecucioFils {
 
     public void iniciarExecucio() {
         try {
-            System.out.println("Iniciant CronoBravo en exclusiva durant 4 segons");
             Thread threadBravo = new Thread(cronometres[1]);
+            System.out.println("Iniciant CronoBravo en exclusiva durant 4 segons");
             threadBravo.start();
             Thread.sleep(4000);
-            System.out.println("Iniciant CronoDelta en exclusiva fins que finalitzi");
             Thread threadDelta = new Thread(cronometres[3]);
             threadDelta.start();
+            System.out.println("Iniciant CronoDelta en exclusiva fins que finalitzi");
             threadDelta.join();
 
-            System.out.println("Iniciant CronoEcho en exclusiva durant 8 segons");
             Thread threadEcho = new Thread(cronometres[4]);
             threadEcho.start();
+            System.out.println("Iniciant CronoEcho en exclusiva durant 8 segons");
             Thread.sleep(8000);
 
-            System.out.println("Iniciant la resta de cronòmetres simultàniament...");
             Thread threadAlfa = new Thread(cronometres[0]);
             Thread threadCharlie = new Thread(cronometres[2]);
             Thread threadFoxtrot = new Thread(cronometres[5]);
             Thread threadGolf = new Thread(cronometres[6]);
-
+            System.out.println("Iniciant la resta de cronòmetres simultàniament...");
+            
             threadAlfa.start();
             threadCharlie.start();
             threadFoxtrot.start();

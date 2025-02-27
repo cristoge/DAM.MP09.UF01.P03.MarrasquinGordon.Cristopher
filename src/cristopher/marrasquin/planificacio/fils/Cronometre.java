@@ -11,7 +11,7 @@ class Cronometre implements Runnable {
 
     @Override
     public void run() {
-        int segonActual = 0;
+        int segonActual = 1;
         while (segonActual <= segons) {
             try {
                 Thread.sleep(1000); // Espera 1 segon
